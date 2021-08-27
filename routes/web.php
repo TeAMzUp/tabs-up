@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Room;
+use App\Models\Thread;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +16,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $room = Room::all();
+    //dd($room);
+    return view('welcome', compact('room'));
 });
 
-Route::get('/forum', function () {
-    return view('forum');
+/** 
+ * Exemple de route.
+ * Capture d'une requête GET à l'URL http://localhost:8000/articles
+ */
+Route::get('/salon/{id}', function ($id) {
+    $room = Room::find($id);
+    return view('rooms', compact('room'));
 });
+
+/** 
+ * Exemple de route.
+ * Capture d'une requête GET à l'URL http://localhost:8000/articles
+ */
+Route::get('/discussion/{id}', function ($id) {
+    $thread = Thread::find($id);
+    return view('discussion', compact('thread'));
+});
+
