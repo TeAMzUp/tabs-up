@@ -22,7 +22,13 @@
 	<link rel="stylesheet" href="/style.css">
     </head>
     <body>
-        Discussion {{$thread->msgT}}<br>
-        Répondre
+        <div class ="top">
+            Discussion {{$thread->msgT}}<br>
+        </div>
+        <div class = "msg">
+            @foreach($messages as $msgList)
+                {{$msgList->msg}}
+            @endforeach
+        </div>
     </body>
 </html>

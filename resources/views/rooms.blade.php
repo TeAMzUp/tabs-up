@@ -22,7 +22,9 @@
 	<link rel="stylesheet" href="/style.css">
     </head>
     <body>
-        Bienvenue dans le salon {{$room->titleR}}<br>
-        Créer une discussion
+        <div class = "top">
+            Bienvenue dans le salon {{$room->titleR}}<br>
+            Créer une discussion
+        </div>
     </body>
 </html>

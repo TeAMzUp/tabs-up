@@ -33,6 +33,13 @@
                         <a href = "/salon/{{$roomList->id}}"> {{$roomList->titleR}}/{{$roomList->descR}}</a>
                     @endforeach
                 </div>
+                {{--
+                <div class = "list2">
+                    @foreach($messages as $msgList)
+                        {{$msgList->msg}}
+                    @endforeach
+                </div>
+                --}}
 			</div>
         </div>
     </body>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Room;
 use App\Models\Thread;
+use App\Models\Message;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,7 @@ Route::get('/salon/{id}', function ($id) {
  */
 Route::get('/discussion/{id}', function ($id) {
     $thread = Thread::find($id);
-    return view('discussion', compact('thread'));
+    $messages = Message::where('idT', '=', $id)->get();
+    return view('threads', compact('thread','messages'));
 });
 
